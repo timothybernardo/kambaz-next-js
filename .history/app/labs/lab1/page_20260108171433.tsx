@@ -84,8 +84,7 @@ export default function Lab1() {
           <li>Beautiful Boy</li>
           <li>Harry Potter and the Goblet of Fire</li>
         </ul>
-      </div>
-      <div id="wd-tables">
+        <div id="wd-tables">
           <h4>Table Tag</h4>
           <table border={1} width="100%">
             <thead>
@@ -165,11 +164,17 @@ export default function Lab1() {
               </tr>
             </tfoot>
           </table>
+        </div>
       </div>
       <div id="wd-images">
         <h4>Image tag</h4>
         Loading an image from the internet: <br />
-        <img id="wd-starship" width="400px"   src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg" />
+        <img
+          id="wd-starship"
+          width="400px"
+          src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-ga
+p2.jpg"
+        />
         <br />
         Loading a local image:
         <br />
