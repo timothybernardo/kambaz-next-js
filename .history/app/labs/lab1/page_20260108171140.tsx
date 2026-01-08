@@ -317,7 +317,7 @@ p2.jpg"
       </a>{" "}
       to get dummy text
       <br />
-      Please{" "}
+      Please
       <a href = "https://github.com/timothybernardo/kanbas-next-js" id="wd-github">
     click here</a>{" "}
       for GitHub link<br/>

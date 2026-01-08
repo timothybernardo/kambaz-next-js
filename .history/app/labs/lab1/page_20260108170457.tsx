@@ -294,33 +294,19 @@ p2.jpg"
         <option value="COMEDY">Comedy</option>
         <option value="DRAMA">Drama</option>
         <option selected value="SCIFI">
-          Science Fiction
-        </option>
+            Science Fiction</option>
         <option value="FANTASY">Fantasy</option>
       </select>
       <h5>Select many</h5>
       <label htmlFor="wd-select-many-genre"> Favorite movie genres: </label>
       <br />
       <select multiple id="wd-select-many-genre">
-        <option value="COMEDY" selected>
-          Comedy
-        </option>
+        <option value="COMEDY" selected>Comedy</option>
         <option value="COMEDY">Drama</option>
-        <option value="SCIFI" selected>
-          Science Fiction
-        </option>
+        <option value="SCIFI" selected>Science Fiction</option>
         <option value="FANTASY"> Fantasy </option>
       </select>
-      <h4>Anchor tag</h4>Please{" "}
-      <a href="https://www.lipsum.com" id="wd-lipsum">
-        click here
-      </a>{" "}
-      to get dummy text
-      <br />
-      Please{" "}
-      <a href = "https://github.com/timothybernardo/kanbas-next-js" id="wd-github">
-    click here</a>{" "}
-      for GitHub link<br/>
+      <h4>Anchor tag</h4>Please <a href="https://www.lipsum.com" id="wd-lipsum">click here</a> to get dummy text<br />
     </div>
   );
 }
