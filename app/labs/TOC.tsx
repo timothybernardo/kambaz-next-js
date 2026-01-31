@@ -1,41 +1,39 @@
+"use client";
+
+import {Nav, NavItem, NavLink} from "react-bootstrap";
 import Link from "next/link";
+
 export default function TOC() {
   return (
-    <ul>
-      <li>
-        <Link href="/labs" id="wd-home-link">
-          Home
+    <Nav variant="pills">
+      <NavItem>
+        <Link href="/labs" passHref legacyBehavior>
+          <NavLink>Labs</NavLink>
         </Link>
-      </li>
-      <li>
-        <Link href="/labs/lab1" id="wd-lab1-link">
-          Lab 1
+      </NavItem>
+      <NavItem>
+        <Link href="/labs/lab1" passHref legacyBehavior>
+          <NavLink>Lab 1</NavLink>
         </Link>
-      </li>
-      <li>
-        <Link href="/labs/lab2" id="wd-lab2-link">
-          Lab 2
+      </NavItem>
+      <NavItem>
+        <Link href="/labs/lab2" passHref legacyBehavior>
+          <NavLink>Lab 2</NavLink>
         </Link>
-      </li>
-      <li>
-        <Link href="/labs/lab3" id="wd-lab3-link">
-          Lab 3
+      </NavItem>
+      <NavItem>
+        <Link href="/labs/lab3" passHref legacyBehavior>
+          <NavLink>Lab 3</NavLink>
         </Link>
-      </li>
-      <li>
-        <Link href="/" id="wd-kambaz-link">
-          Kambaz
+      </NavItem>
+      <NavItem>
+        <Link href="/" passHref legacyBehavior>
+          <NavLink>Kambaz</NavLink>
         </Link>
-      </li>
-      <li>
-        <a 
-          href="https://github.com/timothybernardo/kambaz-next-js" 
-          id="wd-github"
-          target="_blank"
-        >
-          GitHub
-        </a>
-      </li>
-    </ul>
+      </NavItem>
+      <NavItem>
+        <NavLink href="https://github.com/timothybernardo">My GitHub</NavLink>
+      </NavItem>
+    </Nav>
   );
 }

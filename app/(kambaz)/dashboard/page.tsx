@@ -1,96 +1,134 @@
+"use client";
 import Link from "next/link";
-import Image from "next/image";
+import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText, Button } from "react-bootstrap";
+
 export default function Dashboard() {
   return (
     <div id="wd-dashboard">
       <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
-      <h2 id="wd-dashboard-published">Published Courses (12)</h2> <hr />
+      <h2 id="wd-dashboard-published">Published Courses (7)</h2> <hr />
       <div id="wd-dashboard-courses">
-        <div className="wd-dashboard-course">
-          <Link href="/courses/1234" className="wd-dashboard-course-link">
-            <Image src="/images/reactjs.jpg" width={200} height={150} alt="reactjs" />
-            <div>
-              <h5> CS1234 React JS </h5>
-              <p className="wd-dashboard-course-title">
-                Full Stack software developer
-              </p>
-              <button> Go </button>
-            </div>
-          </Link>
-        </div>
-        <div className="wd-dashboard-course"> 
-            <Link href="/courses/4100" className="wd-dashboard-course-link">
-            <Image src="/images/ai.jpg" width={200} height={150} alt="artificialintelligence" />
-            <div>
-              <h5> CS4100 Artificial Intelligence </h5>
-              <p className="wd-dashboard-course-title">
-                Python coding in understanding machine learning 
-              </p>
-              <button> Go </button>
-            </div>
-          </Link>
-        </div>
-        <div className="wd-dashboard-course"> 
-            <Link href="/courses/1107" className="wd-dashboard-course-link">
-            <Image src="/images/biology.jpg" width={200} height={150} alt="biology" />
-            <div>
-              <h5> BIOL1107 Foundations of Biology </h5>
-              <p className="wd-dashboard-course-title">
-                Covers scientific literature, interdisciplinary nature of biology
-              </p>
-              <button> Go </button>
-            </div>
-          </Link>
-        </div>
-        <div className="wd-dashboard-course"> 
-            <Link href="/courses/3000" className="wd-dashboard-course-link">
-            <Image src="/images/algorithms.jpg" width={200} height={150} alt="algorithms" />
-            <div>
-              <h5> CS3000 Algorithms and Data </h5>
-              <p className="wd-dashboard-course-title">
-                Design and solve underlying computational problems
-              </p>
-              <button> Go </button>
-            </div>
-          </Link>
-        </div>
-        <div className="wd-dashboard-course"> 
-            <Link href="/courses/2500" className="wd-dashboard-course-link">
-            <Image src="/images/gamedesign.jpg" width={200} height={150} alt="game" />
-            <div>
-              <h5> GAME2500 Foundations of Game Design </h5>
-              <p className="wd-dashboard-course-title">
-                Designing games for determined player experiences
-              </p>
-              <button> Go </button>
-            </div>
-          </Link>
-        </div>
-        <div className="wd-dashboard-course"> 
-            <Link href="/courses/1112" className="wd-dashboard-course-link">
-            <Image src="/images/publicspeaking.jpg" width={200} height={150} alt="publicspeaking" />
-            <div>
-              <h5> COMM1112 Public Speaking </h5>
-              <p className="wd-dashboard-course-title">
-                Public communication through delivering speeches
-              </p>
-              <button> Go </button>
-            </div>
-          </Link>
-        </div>
-        <div className="wd-dashboard-course"> 
-            <Link href="/courses/3800" className="wd-dashboard-course-link">
-            <Image src="/images/theory.jpg" width={200} height={150} alt="theory" />
-            <div>
-              <h5> CS3800 Theory of Computation </h5>
-              <p className="wd-dashboard-course-title">
-                Understanding what problems algorithms can solve
-              </p>
-              <button> Go </button>
-            </div>
-          </Link>
-        </div>
+        <Row xs={1} md={5} className="g-4">
+          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+            <Card>
+              <Link href="/courses/1234/home" className="wd-dashboard-course-link text-decoration-none text-dark">
+                <CardImg variant="top" src="/images/reactjs.jpg" width="100%" height={160} />
+                <CardBody>
+                  <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    CS1234 React JS
+                  </CardTitle>
+                  <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                    Full Stack software developer
+                  </CardText>
+                  <Button variant="primary">Go</Button>
+                </CardBody>
+              </Link>
+            </Card>
+          </Col>
+
+          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+            <Card>
+              <Link href="/courses/4100/home" className="wd-dashboard-course-link text-decoration-none text-dark">
+                <CardImg variant="top" src="/images/ai.jpg" width="100%" height={160} />
+                <CardBody>
+                  <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    CS4100 Artificial Intelligence
+                  </CardTitle>
+                  <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                    Python coding in understanding machine learning
+                  </CardText>
+                  <Button variant="primary">Go</Button>
+                </CardBody>
+              </Link>
+            </Card>
+          </Col>
+
+          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+            <Card>
+              <Link href="/courses/1107/home" className="wd-dashboard-course-link text-decoration-none text-dark">
+                <CardImg variant="top" src="/images/biology.jpg" width="100%" height={160} />
+                <CardBody>
+                  <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    BIOL1107 Foundations of Biology
+                  </CardTitle>
+                  <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                    Covers scientific literature, interdisciplinary nature of biology
+                  </CardText>
+                  <Button variant="primary">Go</Button>
+                </CardBody>
+              </Link>
+            </Card>
+          </Col>
+
+          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+            <Card>
+              <Link href="/courses/3000/home" className="wd-dashboard-course-link text-decoration-none text-dark">
+                <CardImg variant="top" src="/images/algorithms.jpg" width="100%" height={160} />
+                <CardBody>
+                  <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    CS3000 Algorithms and Data
+                  </CardTitle>
+                  <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                    Design and solve underlying computational problems
+                  </CardText>
+                  <Button variant="primary">Go</Button>
+                </CardBody>
+              </Link>
+            </Card>
+          </Col>
+
+          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+            <Card>
+              <Link href="/courses/2500/home" className="wd-dashboard-course-link text-decoration-none text-dark">
+                <CardImg variant="top" src="/images/gamedesign.jpg" width="100%" height={160} />
+                <CardBody>
+                  <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    GAME2500 Foundations of Game Design
+                  </CardTitle>
+                  <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                    Designing games for determined player experiences
+                  </CardText>
+                  <Button variant="primary">Go</Button>
+                </CardBody>
+              </Link>
+            </Card>
+          </Col>
+
+          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+            <Card>
+              <Link href="/courses/1112/home" className="wd-dashboard-course-link text-decoration-none text-dark">
+                <CardImg variant="top" src="/images/publicspeaking.jpg" width="100%" height={160} />
+                <CardBody>
+                  <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    COMM1112 Public Speaking
+                  </CardTitle>
+                  <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                    Public communication through delivering speeches
+                  </CardText>
+                  <Button variant="primary">Go</Button>
+                </CardBody>
+              </Link>
+            </Card>
+          </Col>
+
+          <Col className="wd-dashboard-course" style={{ width: "300px" }}>
+            <Card>
+              <Link href="/courses/3800/home" className="wd-dashboard-course-link text-decoration-none text-dark">
+                <CardImg variant="top" src="/images/theory.jpg" width="100%" height={160} />
+                <CardBody>
+                  <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                    CS3800 Theory of Computation
+                  </CardTitle>
+                  <CardText className="wd-dashboard-course-description overflow-hidden" style={{ height: "100px" }}>
+                    Understanding what problems algorithms can solve
+                  </CardText>
+                  <Button variant="primary">Go</Button>
+                </CardBody>
+              </Link>
+            </Card>
+          </Col>
+        </Row>
       </div>
     </div>
-);}
-
+  );
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MediaQueriesDemo from "./lab2/mediaqueriesdemo";
 export default function labs() {
   return (
     <div id="wd-labs">
@@ -25,6 +26,7 @@ export default function labs() {
        <Link href="/" id="wd-lab3-link">
          Kambaz </Link> </li>
       </ul>
+      <MediaQueriesDemo />
     </div>
   );
 }
