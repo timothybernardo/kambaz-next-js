@@ -1,0 +1,141 @@
+[
+  {
+    "_id": "M101",
+    "name": "Introduction to Biology",
+    "description": "Foundational concepts of biology and scientific inquiry.",
+    "course": "BIO101",
+    "lessons": [
+      {
+        "_id": "L101",
+        "name": "What Is Life?",
+        "description": "Characteristics of living organisms.",
+        "module": "M101"
+      },
+      {
+        "_id": "L102",
+        "name": "The Scientific Method",
+        "description": "How biological research is conducted.",
+        "module": "M101"
+      },
+      {
+        "_id": "L103",
+        "name": "Levels of Biological Organization",
+        "description": "From molecules to ecosystems.",
+        "module": "M101"
+      }
+    ]
+  },
+  {
+    "_id": "M102",
+    "name": "Cell Structure and Function",
+    "description": "Understanding prokaryotic and eukaryotic cells.",
+    "course": "BIO101",
+    "lessons": [
+      {
+        "_id": "L201",
+        "name": "Cell Theory",
+        "description": "Principles of cell theory.",
+        "module": "M102"
+      },
+      {
+        "_id": "L202",
+        "name": "Organelles",
+        "description": "Structure and function of cell organelles.",
+        "module": "M102"
+      },
+      {
+        "_id": "L203",
+        "name": "Cell Membranes",
+        "description": "Membrane structure and transport mechanisms.",
+        "module": "M102"
+      }
+    ]
+  },
+  {
+    "_id": "M103",
+    "name": "Genetics and DNA",
+    "description": "Introduction to genetics and heredity.",
+    "course": "BIO101",
+    "lessons": [
+      {
+        "_id": "L301",
+        "name": "DNA Structure",
+        "description": "Molecular structure of DNA.",
+        "module": "M103"
+      },
+      {
+        "_id": "L302",
+        "name": "Mendelian Genetics",
+        "description": "Basic laws of inheritance.",
+        "module": "M103"
+      },
+      {
+        "_id": "L303",
+        "name": "Gene Expression",
+        "description": "How genes produce proteins.",
+        "module": "M103"
+      }
+    ]
+  },
+
+  {
+    "_id": "M201",
+    "name": "Introduction to Artificial Intelligence",
+    "description": "Overview of AI concepts and history.",
+    "course": "CS4400",
+    "lessons": [
+      {
+        "_id": "L401",
+        "name": "What Is AI?",
+        "description": "Defining artificial intelligence.",
+        "module": "M201"
+      },
+      {
+        "_id": "L402",
+        "name": "History of AI",
+        "description": "Milestones in AI development.",
+        "module": "M201"
+      }
+    ]
+  },
+  {
+    "_id": "M202",
+    "name": "Search and Problem Solving",
+    "description": "State-space search and problem-solving strategies.",
+    "course": "CS4400",
+    "lessons": [
+      {
+        "_id": "L501",
+        "name": "Uninformed Search",
+        "description": "BFS, DFS, and uniform-cost search.",
+        "module": "M202"
+      },
+      {
+        "_id": "L502",
+        "name": "Informed Search",
+        "description": "Heuristics and A* search.",
+        "module": "M202"
+      }
+    ]
+  },
+  {
+    "_id": "M203",
+    "name": "Machine Learning Basics",
+    "description": "Foundations of machine learning.",
+    "course": "CS4400",
+    "lessons": [
+      {
+        "_id": "L601",
+        "name": "Supervised Learning",
+        "description": "Regression and classification.",
+        "module": "M203"
+      },
+      {
+        "_id": "L602",
+        "name": "Unsupervised Learning",
+        "description": "Clustering and dimensionality reduction.",
+        "module": "M203"
+      }
+    ]
+  }
+]
