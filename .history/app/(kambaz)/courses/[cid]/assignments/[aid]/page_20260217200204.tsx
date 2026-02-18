@@ -1,4 +1,3 @@
-"use client"
 import { Form, FormControl, FormGroup, FormLabel, FormSelect, FormCheck, Button, Row, Col } from "react-bootstrap";
 
 export default function AssignmentEditor() {
