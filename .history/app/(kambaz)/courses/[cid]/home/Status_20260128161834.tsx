@@ -1,11 +1,9 @@
-"use client";
 import { MdDoNotDisturbAlt } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
 import { BiImport } from "react-icons/bi";
 import { LiaFileImportSolid } from "react-icons/lia";
-import { BsFillHouseDoorFill, BsBarChartFill } from "react-icons/bs";
-import { BsMegaphone } from "react-icons/bs";
-import { FaBell } from "react-icons/fa6";
+import { TfiTarget } from "react-icons/tfi";
+import { BsGraphUp, BsMegaphone, BsBell } from "react-icons/bs";
 import { Button } from "react-bootstrap";
 
 export default function CourseStatus() {
@@ -32,19 +30,19 @@ export default function CourseStatus() {
         <LiaFileImportSolid className="me-2 fs-5" /> Import from Commons
       </Button>
       <Button variant="secondary" size="lg" className="w-100 mt-1 text-start">
-        <BsFillHouseDoorFill className="me-2 fs-5" /> Choose Home Page
+        <TfiTarget className="me-2 fs-5" /> Choose Home Page
       </Button>
       <Button variant="secondary" size="lg" className="w-100 mt-1 text-start">
-        <BsBarChartFill className="me-2 fs-5" /> View Course Stream
+        <BsGraphUp className="me-2 fs-5" /> View Course Screen
       </Button>
       <Button variant="secondary" size="lg" className="w-100 mt-1 text-start">
         <BsMegaphone className="me-2 fs-5" /> New Announcement
       </Button>
       <Button variant="secondary" size="lg" className="w-100 mt-1 text-start">
-        <BsBarChartFill className="me-2 fs-5" /> New Analytics
+        <BsGraphUp className="me-2 fs-5" /> New Analytics
       </Button>
       <Button variant="secondary" size="lg" className="w-100 mt-1 text-start">
-        <FaBell className="me-2 fs-5" /> View Course Notifications
+        <BsBell className="me-2 fs-5" /> View Course Notifications
       </Button>
     </div>
   );
