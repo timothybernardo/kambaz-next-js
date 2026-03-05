@@ -25,7 +25,7 @@ export default function CoursesLayout({ children }: { children: ReactNode }) {
       <div className="d-flex">
         {showNav && (
           <div>
-            <CourseNavigation cid={cid as string} />
+            <CourseNavigation />
           </div>
         )}
         <div className="flex-fill p-3">{children}</div>
