@@ -16,6 +16,8 @@ export default function Assignments() {
   const dispatch = useDispatch();
   const router = useRouter();
   const { assignments } = useSelector((state: RootState) => state.assignmentsReducer);
+  const { currentUser } = useSelector((state: RootState) => state.accountReducer);
+  const isStudent = currentUser?.role === "STUDENT";
   const filteredAssignments = assignments.filter(
     (assignment: any) => assignment.course === cid
   );
@@ -31,16 +33,18 @@ export default function Assignments() {
             placeholder="Search for Assignments"
             id="wd-search-assignment" />
         </InputGroup>
-        <div>
-          <Button variant="secondary" size="lg" className="me-2"
-            id="wd-add-assignment-group">
-            <BsPlus className="fs-5" /> Group
-          </Button>
-          <Button variant="danger" size="lg" id="wd-add-assignment"
-            onClick={() => router.push(`/courses/${cid}/assignments/new`)}>
-            <BsPlus className="fs-5" /> Assignment
-          </Button>
-        </div>
+        {!isStudent && (
+          <div>
+            <Button variant="secondary" size="lg" className="me-2"
+              id="wd-add-assignment-group">
+              <BsPlus className="fs-5" /> Group
+            </Button>
+            <Button variant="danger" size="lg" id="wd-add-assignment"
+              onClick={() => router.push(`/courses/${cid}/assignments/new`)}>
+              <BsPlus className="fs-5" /> Assignment
+            </Button>
+          </div>
+        )}
       </div>
 
       <ListGroup className="rounded-0" id="wd-assignment-list">
@@ -79,13 +83,15 @@ export default function Assignments() {
                   </div>
                 </div>
                 <FaCheckCircle className="text-success me-2 fs-5" />
-                <FaTrash className="text-danger me-2 fs-5"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (window.confirm("Are you sure you want to delete this assignment?")) {
-                      dispatch(deleteAssignment(assignment._id));
-                    }
-                  }} />
+                {!isStudent && (
+                  <FaTrash className="text-danger me-2 fs-5"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (window.confirm("Are you sure you want to delete this assignment?")) {
+                        dispatch(deleteAssignment(assignment._id));
+                      }
+                    }} />
+                )}
                 <IoEllipsisVertical className="fs-4" />
               </ListGroupItem>
             ))}

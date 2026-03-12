@@ -14,6 +14,8 @@ export default function AssignmentEditor() {
   const dispatch = useDispatch();
   const router = useRouter();
   const { assignments } = useSelector((state: RootState) => state.assignmentsReducer);
+  const { currentUser } = useSelector((state: RootState) => state.accountReducer);
+  const isStudent = currentUser?.role === "STUDENT";
   const existingAssignment = assignments.find((a: any) => a._id === aid);
 
   const [assignment, setAssignment] = useState<any>({
@@ -48,12 +50,14 @@ export default function AssignmentEditor() {
         <FormLabel htmlFor="wd-name">Assignment Name</FormLabel>
         <FormControl id="wd-name"
           value={assignment.title}
+          disabled={isStudent}
           onChange={(e) => setAssignment({ ...assignment, title: e.target.value })} />
       </FormGroup>
 
       <FormGroup className="mb-3">
         <FormControl as="textarea" id="wd-description" rows={10}
           value={assignment.description}
+          disabled={isStudent}
           onChange={(e) => setAssignment({ ...assignment, description: e.target.value })} />
       </FormGroup>
 
@@ -62,6 +66,7 @@ export default function AssignmentEditor() {
         <Col sm={9}>
           <FormControl id="wd-points" type="number"
             value={assignment.points}
+            disabled={isStudent}
             onChange={(e) => setAssignment({ ...assignment, points: parseInt(e.target.value) })} />
         </Col>
       </FormGroup>
@@ -69,7 +74,7 @@ export default function AssignmentEditor() {
       <FormGroup as={Row} className="mb-3">
         <FormLabel column sm={3} className="text-end" htmlFor="wd-group">Assignment Group</FormLabel>
         <Col sm={9}>
-          <FormSelect id="wd-group" defaultValue="ASSIGNMENTS">
+          <FormSelect id="wd-group" defaultValue="ASSIGNMENTS" disabled={isStudent}>
             <option value="ASSIGNMENTS">ASSIGNMENTS</option>
             <option value="QUIZZES">QUIZZES</option>
             <option value="EXAMS">EXAMS</option>
@@ -81,7 +86,7 @@ export default function AssignmentEditor() {
       <FormGroup as={Row} className="mb-3">
         <FormLabel column sm={3} className="text-end" htmlFor="wd-display-grade-as">Display Grade as</FormLabel>
         <Col sm={9}>
-          <FormSelect id="wd-display-grade-as" defaultValue="Percentage">
+          <FormSelect id="wd-display-grade-as" defaultValue="Percentage" disabled={isStudent}>
             <option value="Percentage">Percentage</option>
             <option value="Letter">Letter Grade</option>
             <option value="Points">Points</option>
@@ -94,17 +99,17 @@ export default function AssignmentEditor() {
         <FormLabel column sm={3} className="text-end" htmlFor="wd-submission-type">Submission Type</FormLabel>
         <Col sm={9}>
           <div className="border rounded p-3">
-            <FormSelect id="wd-submission-type" defaultValue="Online" className="mb-3">
+            <FormSelect id="wd-submission-type" defaultValue="Online" className="mb-3" disabled={isStudent}>
               <option value="Online">Online</option>
               <option value="Paper">On Paper</option>
               <option value="External">External Tool</option>
             </FormSelect>
             <FormLabel className="fw-bold">Online Entry Options</FormLabel>
-            <FormCheck type="checkbox" id="wd-text-entry" label="Text Entry" className="mb-2" />
-            <FormCheck type="checkbox" id="wd-website-url" label="Website URL" className="mb-2" defaultChecked />
-            <FormCheck type="checkbox" id="wd-media-recordings" label="Media Recordings" className="mb-2" />
-            <FormCheck type="checkbox" id="wd-student-annotation" label="Student Annotation" className="mb-2" />
-            <FormCheck type="checkbox" id="wd-file-upload" label="File Uploads" />
+            <FormCheck type="checkbox" id="wd-text-entry" label="Text Entry" className="mb-2" disabled={isStudent} />
+            <FormCheck type="checkbox" id="wd-website-url" label="Website URL" className="mb-2" defaultChecked disabled={isStudent} />
+            <FormCheck type="checkbox" id="wd-media-recordings" label="Media Recordings" className="mb-2" disabled={isStudent} />
+            <FormCheck type="checkbox" id="wd-student-annotation" label="Student Annotation" className="mb-2" disabled={isStudent} />
+            <FormCheck type="checkbox" id="wd-file-upload" label="File Uploads" disabled={isStudent} />
           </div>
         </Col>
       </FormGroup>
@@ -114,11 +119,12 @@ export default function AssignmentEditor() {
         <Col sm={9}>
           <div className="border rounded p-3">
             <FormLabel htmlFor="wd-assign-to" className="fw-bold">Assign to</FormLabel>
-            <FormControl id="wd-assign-to" defaultValue="Everyone" className="mb-3" />
+            <FormControl id="wd-assign-to" defaultValue="Everyone" className="mb-3" disabled={isStudent} />
 
             <FormLabel htmlFor="wd-due-date" className="fw-bold">Due</FormLabel>
             <FormControl type="date" id="wd-due-date"
               value={assignment.due}
+              disabled={isStudent}
               onChange={(e) => setAssignment({ ...assignment, due: e.target.value })}
               className="mb-3" />
 
@@ -127,12 +133,14 @@ export default function AssignmentEditor() {
                 <FormLabel htmlFor="wd-available-from" className="fw-bold">Available from</FormLabel>
                 <FormControl type="date" id="wd-available-from"
                   value={assignment.available}
+                  disabled={isStudent}
                   onChange={(e) => setAssignment({ ...assignment, available: e.target.value })} />
               </Col>
               <Col sm={6}>
                 <FormLabel htmlFor="wd-available-until" className="fw-bold">Until</FormLabel>
                 <FormControl type="date" id="wd-available-until"
                   value={assignment.until}
+                  disabled={isStudent}
                   onChange={(e) => setAssignment({ ...assignment, until: e.target.value })} />
               </Col>
             </Row>
@@ -146,10 +154,12 @@ export default function AssignmentEditor() {
           className="btn btn-secondary me-2" id="wd-cancel">
           Cancel
         </Link>
-        <button onClick={handleSave}
-          className="btn btn-danger" id="wd-save">
-          Save
-        </button>
+        {!isStudent && (
+          <button onClick={handleSave}
+            className="btn btn-danger" id="wd-save">
+            Save
+          </button>
+        )}
       </div>
     </div>
   );
