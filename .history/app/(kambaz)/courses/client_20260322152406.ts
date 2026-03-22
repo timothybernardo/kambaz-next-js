@@ -1,9 +1,9 @@
 import axios from "axios";
 const axiosWithCredentials = axios.create({ withCredentials: true });
 
-const COURSES_API     = `${process.env.NEXT_PUBLIC_HTTP_SERVER}/api/courses`;
-const USERS_API       = `${process.env.NEXT_PUBLIC_HTTP_SERVER}/api/users`;
-const MODULES_API     = `${process.env.NEXT_PUBLIC_HTTP_SERVER}/api/modules`;
+const COURSES_API     = `${process.env.NEXT_PUBLIC_API_BASE}/api/courses`;
+const USERS_API       = `${process.env.NEXT_PUBLIC_API_BASE}/api/users`;
+const MODULES_API     = `${process.env.NEXT_PUBLIC_API_BASE}/api/modules`;
 const ASSIGNMENTS_API = `${process.env.NEXT_PUBLIC_HTTP_SERVER}/api/assignments`;
 
 export const findMyCourses = async () => {
