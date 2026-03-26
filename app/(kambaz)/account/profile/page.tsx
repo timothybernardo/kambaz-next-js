@@ -15,7 +15,10 @@ export default function Profile() {
 
   const fetchProfile = () => {
     if (!currentUser) return router.push("/account/signin");
-    setProfile(currentUser);
+    setProfile({
+      ...currentUser,
+      dob: currentUser.dob ? new Date(currentUser.dob).toISOString().split("T")[0] : "",
+    });
   };
 
   useEffect(() => {
