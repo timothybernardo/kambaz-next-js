@@ -1,6 +1,8 @@
 import axios from "axios";
 import { Quiz } from "./types";
-const BASE = "/api";
+
+const REMOTE = process.env.NEXT_PUBLIC_HTTP_SERVER;
+const BASE = `${REMOTE}/api`;
 const axiosWithCredentials = axios.create({ withCredentials: true });
 
 export const getQuizzesForCourse = (cid: string) =>
