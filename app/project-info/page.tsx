@@ -5,7 +5,7 @@ export default function ProjectInfo() {
       <hr />
 
       <h2>Team</h2>
-      <p><strong>Timothy Bernardo</strong></p>
+      <p><strong>Timothy Bernardo (SEC 02)</strong></p>
 
       <h2>Repositories</h2>
       <p>
