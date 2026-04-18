@@ -1,10 +1,9 @@
 import axios from "axios";
 const axiosWithCredentials = axios.create({ withCredentials: true });
 
-const COURSES_API     = "/api/courses";
-const USERS_API       = "/api/users";
-const ASSIGNMENTS_API = "/api/assignments";
-
+const COURSES_API      = "/api/courses";
+const USERS_API        = "/api/users";
+const ASSIGNMENTS_API  = "/api/assignments";
 export const findMyCourses = async () => {
   const { data } = await axiosWithCredentials.get(`${USERS_API}/current/courses`);
   return data;
