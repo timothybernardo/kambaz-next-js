@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://kambaz-node-server-app-quiz-84j4.onrender.com/api/:path*",
+        destination: "https://kambaz-next-js-git-quizzes-timothybernardos-projects.vercel.app",
       },
     ];
   },
