@@ -1,10 +1,3 @@
-/**
- * Redux Toolkit slice for quiz state.
- * Holds the quizzes array and exposes five actions: setQuizzes (bulk load
- * from server), addQuiz, updateQuiz, deleteQuiz, and togglePublish.
- * Keeps the UI in sync with the server without re-fetching after each mutation.
- */
-
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Quiz } from "./types";
 
